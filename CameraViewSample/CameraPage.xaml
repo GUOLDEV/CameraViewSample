@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="CameraViewSample.CameraPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Title="Camera">
+    <ContentPage.Content>
+        <Grid>
+            <xct:CameraView
+                x:Name="cameraView"
+                CaptureMode="Photo"
+                HorizontalOptions="FillAndExpand"
+                MediaCaptured="CameraView_MediaCaptured"
+                OnAvailable="CameraView_OnAvailable"
+                VerticalOptions="FillAndExpand" />
+            <Button
+                x:Name="shutterButton"
+                Margin="40"
+                BackgroundColor="WhiteSmoke"
+                BorderColor="Black"
+                BorderWidth="1"
+                Command="{Binding ShutterCommand, Source={x:Reference cameraView}}"
+                CornerRadius="40"
+                HeightRequest="80"
+                HorizontalOptions="CenterAndExpand"
+                IsEnabled="False"
+                VerticalOptions="End"
+                WidthRequest="80" />
+            <Image
+                x:Name="previewPicture"
+                Margin="40"
+                Aspect="AspectFill"
+                BackgroundColor="Black"
+                HeightRequest="80"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="EndAndExpand"
+                WidthRequest="80" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
