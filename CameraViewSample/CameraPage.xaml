@@ -11,9 +11,12 @@
                 x:Name="cameraView"
                 CaptureMode="Photo"
                 HorizontalOptions="FillAndExpand"
-                MediaCaptured="CameraView_MediaCaptured"
                 OnAvailable="CameraView_OnAvailable"
-                VerticalOptions="FillAndExpand" />
+                VerticalOptions="FillAndExpand">
+                <xct:CameraView.Behaviors>
+                    <xct:EventToCommandBehavior Command="{Binding CaptureCommand}" EventName="MediaCaptured" />
+                </xct:CameraView.Behaviors>
+            </xct:CameraView>
             <Button
                 x:Name="shutterButton"
                 Margin="40"
