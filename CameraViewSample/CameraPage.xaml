@@ -10,6 +10,7 @@
             <xct:CameraView
                 x:Name="cameraView"
                 CaptureMode="Photo"
+                FlashMode="Torch"
                 HorizontalOptions="FillAndExpand"
                 MediaCaptured="CameraView_MediaCaptured"
                 OnAvailable="CameraView_OnAvailable"

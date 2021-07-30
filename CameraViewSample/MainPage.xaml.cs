@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace CameraViewSample
 {
@@ -9,17 +7,16 @@ namespace CameraViewSample
         public MainPage()
         {
             InitializeComponent();
-            Task.Run(async ()=> await LongProcessTask());
 		}
-
-        private async Task LongProcessTask()
-        {
-            await Task.Delay(TimeSpan.FromMinutes(1));
-        }
 
         public async void CameraButton_Clicked(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new CameraPage());
+        }
+
+        public async void SegmentedControlButton_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new SegmentedControlPage());
         }
     }
 }

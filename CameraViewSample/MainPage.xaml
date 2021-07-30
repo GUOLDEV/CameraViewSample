@@ -5,13 +5,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="CameraView Sample">
     <ContentPage.Content>
-        <Grid>
+        <StackLayout>
             <Button
                 x:Name="cameraButton"
                 Clicked="CameraButton_Clicked"
                 HorizontalOptions="Center"
                 Text="Open Camera"
                 VerticalOptions="Center" />
-        </Grid>
+            <Button
+                x:Name="segmentedControlButton"
+                Clicked="SegmentedControlButton_Clicked"
+                HorizontalOptions="Center"
+                Text="Segmented Control"
+                VerticalOptions="Center" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
